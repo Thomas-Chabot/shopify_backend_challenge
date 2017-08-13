@@ -20,7 +20,7 @@
 'use strict';
 
 let _parseCriteria = function (criteria){
-	/*	- - - - THE EXAMPLE - - - - - - 
+	/*	- - - - THE EXAMPLE - - - - - -
 		{
 		  "validations": [
 		    {
@@ -79,6 +79,7 @@ let _parseCriteria = function (criteria){
 
 		criterium.required = criterium.required || false;
 		criterium.name     = name;
+
 		return criterium;
 	}
 
@@ -98,7 +99,7 @@ let _checkField = function (user, field) {
 	// first check : does the user have the field?
 	// if not and it's required, invalid ; else valid
 	var prop = user [field.name];
-	if (!prop)
+	if (prop === undefined || prop === null)
 		return !field.required;
 
 	// does it match a specified type (if given) ?
@@ -128,11 +129,11 @@ class Validity {
 	check (user){
 		// walk through every criteria field & check
 		let invalidFields = [ ];
-		
+
 		for (let index in this._criteria)
 			if (!_checkField (user, this._criteria [index]))
 				invalidFields.push (this._criteria [index].name);
-
+		
 		return {
 			valid: invalidFields.length === 0,
 			invalidFields: invalidFields
