@@ -2,6 +2,7 @@
 
 let Parser    = require ('./Parser.js').Parser;
 let Customers = require ('./Customers.js').Customers;
+let View      = require ('./View.js').View;
 
 class Control {
 	constructor () {
@@ -10,13 +11,13 @@ class Control {
 		Parser.load ((data)=>{
 			this.check (data);
 		}).then (()=>{ this.finish (); }, (err)=>{
-			console.error (err);
+			View.error (err);
 		});
 	}
 
 	check (data) {
 		if (!data){
-			console.error ("-- ERROR: DATA DID NOT LOAD --");
+			View.error ("data not loaded");
 			return false;
 		}
 
@@ -28,7 +29,7 @@ class Control {
 			invalid_customers: this.customers.invalidData
 		};
 
-		console.log (JSON.stringify (results, null, 2));
+		View.outputResults (results);
 	}
 }
 

@@ -21,11 +21,9 @@ var request = require ("request");
 let apiBase = 'https://backend-challenge-winter-2017.herokuapp.com/customers.json';
 
 let _getMaxPageIndex = function (pageData) {
-	if (!pageData){
-		console.error ("-- Page Data not provided. Returning -1 --");
+	if (!pageData)
 		return -1;
-	}
-	
+
 	let perPage = pageData.per_page;
 	let total   = pageData.total;
 
