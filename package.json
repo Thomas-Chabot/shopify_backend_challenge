@@ -1,0 +1,30 @@
+{
+  "name": "shopify-backend-challenge",
+  "version": "1.0.0",
+  "description": "submission for the shopify backend internship challenge, winter 2017",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanhodges61/shopify_backend_challenge.git"
+  },
+  "keywords": [
+    "shopify",
+    "backend",
+    "internship",
+    "challenge",
+    "winter",
+    "2017"
+  ],
+  "author": "sean hodges",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seanhodges61/shopify_backend_challenge/issues"
+  },
+  "homepage": "https://github.com/seanhodges61/shopify_backend_challenge#readme",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
+}

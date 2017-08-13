@@ -1,2 +1,2 @@
-var Control = require ("./Control.js").Control;
+var Control = require ("./modules/Control.js").Control;
 new Control ();
