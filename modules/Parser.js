@@ -45,7 +45,8 @@ let _load = function (curPageIndex, maxPageIndex, eachFunc) {
 					}
 
 					// if we don't have it yet, get the max page number
-					if (maxPageIndex < 0)
+					if (maxPageIndex < 0) // NOTE: If want to check page totals after loading each page,
+					                      //       would comment this line out.
 						maxPageIndex = _getMaxPageIndex (data.pagination);
 
 					// run the each function ...
